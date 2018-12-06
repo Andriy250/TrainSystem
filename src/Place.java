@@ -1,36 +1,36 @@
 import java.math.BigDecimal;
 
 public class Place {
-    private int number;
+    private static int number = 0;
     private int trainId;
     private int wagonId;
     private String type;
     private boolean isFree;
-    private BigDecimal price;
+    private double price;
 
-    public Place(int id, Train train, Wagon wagon, String type, BigDecimal price){
-        this.number = id;
+    public Place(Train train, Wagon wagon, String type, double price){
+        this.number +=1;
         this.trainId = train.getTrainId();
         this.wagonId = wagon.getWagonId();
         this.type = type;
         this.isFree = true;
-        this.price = new BigDecimal(price.floatValue());
+        this.price = price;
     }
 
     public void placeIsTaken() {isFree = false;}
 
     public boolean checkPlase(){return isFree;}
 
-    public void setPrice(BigDecimal price){
-        this.price = new BigDecimal(price.floatValue());
+    public void setPrice(double price){
+        this.price = price;
     }
 
-    public BigDecimal getPrice() {
+    public double getPrice() {
         return price;
     }
 
     @Override
     public String toString() {
-        return "Number: " + number + " in train " + trainId + ", wagon: " + wagonId + ", type " + type + ", price:" + price.toString();
+        return "Number: " + number + " in train " + trainId + ", wagon: " + wagonId + ", type " + type + ", price:" + price;
     }
 }
