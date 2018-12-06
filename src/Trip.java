@@ -1,15 +1,22 @@
+import java.util.Date;
 import java.util.List;
 
 public class Trip {
 
     private static int tripID  = 0;
-    private Route route;
+    private Station startRoute;
+    private Station endRoute;
+    private Date arrivalTime;
+    private Date departureTime;
     private List<Customer> Customer;
     private List<Place> places;
 
-    public Trip(Route route, List<Customer> customer, List<Place> places) {
+    public Trip(Route startRoute,Route endRoute, List<Customer> customer, List<Place> places) {
         this.tripID +=1;
-        this.route = route;
+        this.startRoute = startRoute.getTrainSchedules().get(0).getStation();
+        this.endRoute = endRoute.getTrainSchedules().get(1).getStation();
+        this.arrivalTime = startRoute.getTrainSchedules().get(0).getArrivalTime();
+        this.departureTime = endRoute.getTrainSchedules().get(1).getDepartureTime();
         Customer = customer;
         this.places = places;
     }
@@ -22,12 +29,20 @@ public class Trip {
         this.tripID = tripID;
     }
 
-    public Route getRoute() {
-        return route;
+    public Station getStartRoute() {
+        return startRoute;
     }
 
-    public void setRoute(Route route) {
-        this.route = route;
+    public void setStartRoute(Station route) {
+        this.startRoute = route;
+    }
+
+    public Station getEndRoute() {
+        return endRoute;
+    }
+
+    public void setEndRoute(Station endRoute) {
+        this.endRoute = endRoute;
     }
 
     public List<Customer> getCustomer() {
@@ -49,7 +64,10 @@ public class Trip {
     @Override
     public String toString() {
         return "Trip{" +
-                "route=" + route +
+                "startRoute=" + startRoute +
+                ", endRoute=" + endRoute +
+                ", arrivalTime=" + arrivalTime +
+                ", departureTime=" + departureTime +
                 ", Customer=" + Customer +
                 ", places=" + places +
                 '}';

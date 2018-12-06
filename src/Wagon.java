@@ -7,9 +7,9 @@ public class Wagon {
     private WagonType type;
     private List<Place> places;
 
-    public Wagon(int trainId, WagonType type, List<Place> places) {
+    public Wagon(Train trainId, WagonType type) {
         WAGON_ID +=1;
-        this.trainId = trainId;
+        this.trainId = trainId.getTrainId();
         this.type = type;
         this.places = places;
     }

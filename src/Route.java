@@ -9,6 +9,22 @@ public class Route {
         this.trainSchedules = trainSchedules;
     }
 
+    public Train getTrain() {
+        return train;
+    }
+
+    public void setTrain(Train train) {
+        this.train = train;
+    }
+
+    public List<TrainSchedule> getTrainSchedules() {
+        return trainSchedules;
+    }
+
+    public void setTrainSchedules(List<TrainSchedule> trainSchedules) {
+        this.trainSchedules = trainSchedules;
+    }
+
     @Override
     public String toString() {
         StringBuilder info = new StringBuilder();

@@ -4,9 +4,9 @@ public class Train {
     private static int TRAIN_ID = 0;
     private List<Wagon> wagons;
 
-    public Train(List<Wagon> wagons) {
+    public Train() {
         TRAIN_ID += 1;
-        this.wagons = wagons;
+        //this.wagons = wagons;
     }
 
     public int getTrainId() {

@@ -4,15 +4,15 @@ public class Place {
     private static int number = 0;
     private int trainId;
     private int wagonId;
-    private String type;
+ //   private String type;
     private boolean isFree;
     private double price;
 
-    public Place(Train train, Wagon wagon, String type, double price){
+    public Place(Train train, Wagon wagon, double price){
         this.number +=1;
         this.trainId = train.getTrainId();
         this.wagonId = wagon.getWagonId();
-        this.type = type;
+       // this.type = type;
         this.isFree = true;
         this.price = price;
     }
@@ -31,6 +31,6 @@ public class Place {
 
     @Override
     public String toString() {
-        return "Number: " + number + " in train " + trainId + ", wagon: " + wagonId + ", type " + type + ", price:" + price;
+        return "Number: " + number + " in train " + trainId + ", wagon: " + wagonId + ", price:" + price;
     }
 }
