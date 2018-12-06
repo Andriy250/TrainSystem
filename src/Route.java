@@ -2,9 +2,9 @@ public class Route {
     private Train train;
     private TrainSchedule[] trainSchedules;
 
-    public Route(Train _train, TrainSchedule[] _trainSchedules){
-        train = _train;
-        trainSchedules = _trainSchedules;
+    public Route(Train train, TrainSchedule[] trainSchedules){
+        this.train = train;
+        this.trainSchedules = trainSchedules;
     }
 
     @Override
