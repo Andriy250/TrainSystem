@@ -5,10 +5,10 @@ public class TrainSchedule {
     private Date arrivalTime;
     private Date departureTime;
 
-    public TrainSchedule(Station _station, Date _arrivalTime, Date _departureTime){
-        station = _station;
-        arrivalTime = (Date)_arrivalTime.clone();
-        departureTime = (Date)_departureTime.clone();
+    public TrainSchedule(Station station, Date arrivalTime, Date departureTime){
+        this.station = station;
+        this.arrivalTime = (Date)arrivalTime.clone();
+        this.departureTime = (Date)departureTime.clone();
     }
 
     @Override

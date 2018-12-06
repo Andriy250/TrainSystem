@@ -8,21 +8,21 @@ public class Place {
     private boolean isFree;
     private BigDecimal price;
 
-    public Place(int id, int _trainId, int _wagonId, String _class, BigDecimal _price){
-        number = id;
-        trainId = _trainId;
-        wagonId = _wagonId;
-        type = _class;
-        isFree = true;
-        price = new BigDecimal(_price.floatValue());
+    public Place(int id, Train train, Wagon wagon, String type, BigDecimal price){
+        this.number = id;
+        this.trainId = train.getTrainId();
+        this.wagonId = wagon.getWagonId();
+        this.type = type;
+        this.isFree = true;
+        this.price = new BigDecimal(price.floatValue());
     }
 
     public void placeIsTaken() {isFree = false;}
 
     public boolean checkPlase(){return isFree;}
 
-    public void setPrice(BigDecimal _price){
-        price = new BigDecimal(_price.floatValue());
+    public void setPrice(BigDecimal price){
+        this.price = new BigDecimal(price.floatValue());
     }
 
     public BigDecimal getPrice() {
