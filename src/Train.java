@@ -1,20 +1,16 @@
 import java.util.List;
 
 public class Train {
-    private int trainId;
+    private static int TRAIN_ID = 0;
     private List<Wagon> wagons;
 
-    public Train(int trainId, List<Wagon> wagons) {
-        this.trainId = trainId;
+    public Train(List<Wagon> wagons) {
+        TRAIN_ID += 1;
         this.wagons = wagons;
     }
 
     public int getTrainId() {
-        return trainId;
-    }
-
-    public void setTrainId(int trainId) {
-        this.trainId = trainId;
+        return TRAIN_ID;
     }
 
     public List<Wagon> getWagons() {
@@ -28,7 +24,7 @@ public class Train {
     @Override
     public String toString() {
         return "Train{" +
-                "trainId=" + trainId +
+                "trainId=" + TRAIN_ID +
                 ", wagons=" + wagons +
                 '}';
     }

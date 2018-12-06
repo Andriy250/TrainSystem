@@ -2,13 +2,13 @@ import java.util.List;
 
 public class Wagon {
 
-    private int wagonId;
+    private static int WAGON_ID = 0;
     private int trainId;
     private WagonType type;
     private List<Place> places;
 
-    public Wagon(int wagonId, int trainId, WagonType type, List<Place> places) {
-        this.wagonId = wagonId;
+    public Wagon(int trainId, WagonType type, List<Place> places) {
+        WAGON_ID +=1;
         this.trainId = trainId;
         this.type = type;
         this.places = places;
@@ -22,12 +22,6 @@ public class Wagon {
         this.type = type;
     }
 
-    public Wagon(int wagonId, int trainId, List<Place> places) {
-        this.wagonId = wagonId;
-        this.trainId = trainId;
-        this.places = places;
-    }
-
     public List<Place> getPlaces() {
         return places;
     }
@@ -37,11 +31,7 @@ public class Wagon {
     }
 
     public int getWagonId() {
-        return wagonId;
-    }
-
-    public void setWagonId(int wagonId) {
-        this.wagonId = wagonId;
+        return WAGON_ID;
     }
 
     public int getTrainId() {
@@ -55,7 +45,7 @@ public class Wagon {
     @Override
     public String toString() {
         return "Wagon{" +
-                "wagonId=" + wagonId +
+                "wagonId=" + WAGON_ID +
                 ", trainId=" + trainId +
                 ", type=" + type +
                 ", places=" + places +
