@@ -1,7 +1,7 @@
 public class Train {
     private int trainId;
 
-    private int getTrainId(){return trainId;}
+    public int getTrainId(){return trainId;}
 
     @Override
     public String toString() {
