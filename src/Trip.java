@@ -11,12 +11,12 @@ public class Trip {
     private List<Customer> Customer;
     private List<Place> places;
 
-    public Trip(Route startRoute,Route endRoute, List<Customer> customer, List<Place> places, int tripID) {
+    public Trip(TrainSchedule startRoute,TrainSchedule endRoute, List<Customer> customer, List<Place> places, int tripID) {
         this.tripID = tripID;
-        this.startRoute = startRoute.getTrainSchedules().get(0).getStation();
-        this.endRoute = endRoute.getTrainSchedules().get(1).getStation();
-        this.arrivalTime = startRoute.getTrainSchedules().get(0).getArrivalTime();
-        this.departureTime = endRoute.getTrainSchedules().get(1).getDepartureTime();
+        this.startRoute = startRoute.getStation();
+        this.endRoute = endRoute.getStation();
+        this.arrivalTime = startRoute.getArrivalTime();
+        this.departureTime = endRoute.getDepartureTime();
         Customer = customer;
         this.places = places;
     }
@@ -27,6 +27,22 @@ public class Trip {
 
     public void setTripID(int tripID) {
         this.tripID = tripID;
+    }
+
+    public Date getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public void setArrivalTime(Date arrivalTime) {
+        this.arrivalTime = arrivalTime;
+    }
+
+    public Date getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(Date departureTime) {
+        this.departureTime = departureTime;
     }
 
     public Station getStartRoute() {

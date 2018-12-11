@@ -4,7 +4,6 @@ public class Place {
     private int number;
     private int trainId;
     private int wagonId;
- //   private String type;
     private boolean isFree;
     private double price;
 

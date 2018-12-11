@@ -1,8 +1,10 @@
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Route {
+
     private Train train;
     private LinkedList<TrainSchedule> trainSchedules;
 
@@ -13,12 +15,12 @@ public class Route {
 
 
 
-    public boolean checkRoute(Station currentStation, Station chosenStation, Date arrivalDate){
+    public boolean checkRoute(String currentStation, String chosenStation, Date arrivalDate){
         boolean isCur=false,isChosen = false;
         TrainSchedule currentArrival = null; //trainSchedules.get(0);
         for (TrainSchedule trSh : trainSchedules){
-            isCur = (trSh.getStation().getName().equals(currentStation.getName())) ? true : isCur;
-            isChosen = (trSh.getStation().getName().equals(chosenStation.getName())) ? true : isChosen;
+            isCur = (trSh.getStation().getName().equals(currentStation)) ? true : isCur;
+            isChosen = (trSh.getStation().getName().equals(chosenStation)) ? true : isChosen;
             if (isCur && isChosen) currentArrival = trSh;
         }
         if ((currentArrival != null) && (arrivalDate.after(currentArrival.getArrivalTime()))
@@ -26,6 +28,25 @@ public class Route {
             return true;
         }
         return false;
+    }
+
+
+    public String showPathToStation(String currentStation,String chosenStation){
+        ListIterator iterator = trainSchedules.listIterator();
+        StringBuilder stations = new StringBuilder();
+        boolean pathStart = false;
+        while((iterator.hasNext())){
+            if((((TrainSchedule)iterator.next()).getStation().getName().equals(currentStation))){
+                stations.append(currentStation + ((!pathStart)?"-":""));
+                pathStart = !pathStart;
+            } else if ((((TrainSchedule)iterator.next()).getStation().getName().equals(chosenStation))) {
+                stations.append(chosenStation + ((!pathStart)?"-":""));
+                pathStart = !pathStart;
+            }
+            if (pathStart) stations.append(((TrainSchedule) iterator.next()).getStation().getName() + "-");
+            else break;
+        }
+        return stations.toString();
     }
 
 
