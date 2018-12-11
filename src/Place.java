@@ -1,18 +1,17 @@
 import java.math.BigDecimal;
 
 public class Place {
-    private static int number = 0;
+    private int number;
     private int trainId;
     private int wagonId;
  //   private String type;
     private boolean isFree;
     private double price;
 
-    public Place(Train train, Wagon wagon, double price){
-        this.number +=1;
-        this.trainId = train.getTrainId();
-        this.wagonId = wagon.getWagonId();
-       // this.type = type;
+    public Place(int trainId, int wagonId, double price, int number){
+        this.number = number;
+        this.trainId = trainId;
+        this.wagonId = wagonId;
         this.isFree = true;
         this.price = price;
     }

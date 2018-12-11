@@ -7,8 +7,8 @@ public class TrainSchedule {
 
     public TrainSchedule(Station station, Date arrivalTime, Date departureTime){
         this.station = station;
-        this.arrivalTime = (Date)arrivalTime.clone();
-        this.departureTime = (Date)departureTime.clone();
+        this.arrivalTime = arrivalTime;//(Date)arrivalTime.clone();
+        this.departureTime = departureTime;//(Date)departureTime.clone();
     }
 
     public Station getStation() {

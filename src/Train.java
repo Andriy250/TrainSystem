@@ -1,13 +1,15 @@
 import java.util.List;
 
 public class Train {
-    private static int TRAIN_ID = 0;
+    private int TRAIN_ID;
     private List<Wagon> wagons;
 
-    public Train() {
-        TRAIN_ID += 1;
+    public Train(int TRAIN_ID) {
+        this.TRAIN_ID = TRAIN_ID;
         //this.wagons = wagons;
     }
+
+
 
     public int getTrainId() {
         return TRAIN_ID;

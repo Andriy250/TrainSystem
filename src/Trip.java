@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Trip {
 
-    private static int tripID  = 0;
+    private int tripID ;
     private Station startRoute;
     private Station endRoute;
     private Date arrivalTime;
@@ -11,8 +11,8 @@ public class Trip {
     private List<Customer> Customer;
     private List<Place> places;
 
-    public Trip(Route startRoute,Route endRoute, List<Customer> customer, List<Place> places) {
-        this.tripID +=1;
+    public Trip(Route startRoute,Route endRoute, List<Customer> customer, List<Place> places, int tripID) {
+        this.tripID = tripID;
         this.startRoute = startRoute.getTrainSchedules().get(0).getStation();
         this.endRoute = endRoute.getTrainSchedules().get(1).getStation();
         this.arrivalTime = startRoute.getTrainSchedules().get(0).getArrivalTime();

@@ -2,13 +2,13 @@ import java.util.List;
 
 public class Wagon {
 
-    private static int WAGON_ID = 0;
+    private int WAGON_ID;
     private int trainId;
     private WagonType type;
     private List<Place> places;
 
-    public Wagon(Train trainId, WagonType type) {
-        WAGON_ID +=1;
+    public Wagon(Train trainId, WagonType type, int WAGON_ID) {
+        this.WAGON_ID = WAGON_ID;
         this.trainId = trainId.getTrainId();
         this.type = type;
         this.places = places;
