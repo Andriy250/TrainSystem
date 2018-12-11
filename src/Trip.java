@@ -68,7 +68,7 @@ public class Trip {
                 ", endRoute=" + endRoute +
                 ", arrivalTime=" + arrivalTime +
                 ", departureTime=" + departureTime +
-                ", Customer=" + Customer +
+                    Customer +
                 ", places=" + places +
                 '}';
     }
