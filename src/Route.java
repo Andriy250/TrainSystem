@@ -9,6 +9,8 @@ public class Route {
         this.trainSchedules = trainSchedules;
     }
 
+
+
     public Train getTrain() {
         return train;
     }
@@ -28,6 +30,7 @@ public class Route {
     @Override
     public String toString() {
         StringBuilder info = new StringBuilder();
+       // info.append(train.toString() + " ");
         for(TrainSchedule t : trainSchedules) {
             info.append(t.toString() + " ");
         }
