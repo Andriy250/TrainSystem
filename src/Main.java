@@ -12,9 +12,12 @@ public class Main {
         Train train = new Train(1);
         Wagon wagon = new Wagon(train, WagonType.PLATZKART, 1);
         Place place = new Place(train.getTrainId(), wagon.getWagonId(), 220, 1);
-
         List<Place> places = new ArrayList<>();
         places.add(place);
+        wagon.setPlaces(places);
+        List<Wagon> wagons = new ArrayList<>();
+        wagons.add(wagon);
+        train.setWagons(wagons);
 
         return train;
     }
@@ -57,9 +60,13 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        intialisationPlace();
+        intialisationTrainSchedule();
+        intialisationCustomer();
 
-      Trip trip =  intialisationTrip();
-      Route route =  intialisationRoute();
+        Route route = intialisationRoute();
+        Trip trip = intialisationTrip();
+
 
        UserInterface userInterface = new UserInterface();
 
