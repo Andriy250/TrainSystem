@@ -1,12 +1,31 @@
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Route {
     private Train train;
-    private List<TrainSchedule> trainSchedules;
+    private LinkedList<TrainSchedule> trainSchedules;
 
-    public Route(Train train, List<TrainSchedule> trainSchedules){
+    public Route(Train train, LinkedList<TrainSchedule> trainSchedules){
         this.train = train;
         this.trainSchedules = trainSchedules;
+    }
+
+
+
+    public boolean checkRoute(Station currentStation, Station chosenStation, Date arrivalDate){
+        boolean isCur=false,isChosen = false;
+        TrainSchedule currentArrival = null; //trainSchedules.get(0);
+        for (TrainSchedule trSh : trainSchedules){
+            isCur = (trSh.getStation().getName().equals(currentStation.getName())) ? true : isCur;
+            isChosen = (trSh.getStation().getName().equals(chosenStation.getName())) ? true : isChosen;
+            if (isCur && isChosen) currentArrival = trSh;
+        }
+        if ((currentArrival != null) && (arrivalDate.after(currentArrival.getArrivalTime()))
+                && (arrivalDate.before(currentArrival.getDepartureTime()))) {
+            return true;
+        }
+        return false;
     }
 
 
@@ -23,7 +42,7 @@ public class Route {
         return trainSchedules;
     }
 
-    public void setTrainSchedules(List<TrainSchedule> trainSchedules) {
+    public void setTrainSchedules(LinkedList<TrainSchedule> trainSchedules) {
         this.trainSchedules = trainSchedules;
     }
 
