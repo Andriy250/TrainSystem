@@ -52,7 +52,7 @@ public class UserInterface {
                 String arrivalStation = sc.nextLine();
                 System.out.println("Arrival time, sir: ");
                 String time = sc.nextLine();
-                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
                 Date dateArrival = null;
                 try {
                     dateArrival = formatter.parse(time);
@@ -67,12 +67,12 @@ public class UserInterface {
                 }
 
                 System.out.println("choose route: ");
-                int chosenRoute = sc.nextInt();
+                int chosenRoute = sc.nextInt() - 1;
                 Ticket ticket = new Ticket(user.getName(), schedule.getRoute(chosenRoute).getTrain().getTrainId(),
                         Stations.findStationByName(arrivalStation),
                         Stations.findStationByName(departStation),
                         schedule.getRoute(chosenRoute).findDeparturTimeFromStartStation(Stations.findStationByName(departStation)),
-                        schedule.getRoute(chosenRoute).findDeparturTimeFromStartStation(Stations.findStationByName(arrivalStation)));
+                        schedule.getRoute(chosenRoute ).findDeparturTimeFromStartStation(Stations.findStationByName(arrivalStation)));
                 System.out.println("Yor ticket: \n" + ticket.toString());
             }
             if (sc.nextLine().equals("ESC")) break;
