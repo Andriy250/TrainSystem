@@ -14,7 +14,6 @@ public class Route {
     }
 
 
-
     public boolean checkRoute(String currentStation, String chosenStation, Date arrivalDate){
         boolean isCur=false,isChosen = false;
         TrainSchedule currentArrival = null; //trainSchedules.get(0);
@@ -49,6 +48,21 @@ public class Route {
         return stations.toString();
     }
 
+    public Date findDeparturTimeFromStartStation(Station station){
+        for (TrainSchedule tS: trainSchedules){
+            if (tS.getStation().getName().equals(station.getName()))
+                return tS.getDepartureTime();
+        }
+        return null;
+    }
+
+    public Date findArrivalTimeToEndStation(Station station){
+        for (TrainSchedule tS: trainSchedules){
+            if (tS.getStation().getName().equals(station.getName()))
+                return tS.getArrivalTime();
+        }
+        return null;
+    }
 
 
     public Train getTrain() {

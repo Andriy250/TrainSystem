@@ -36,8 +36,8 @@ public class UserInterface {
                     "Depart station :" + ticket.getDepartureStation().getName() + "\n" +
                     "Date depart :" + ticket.getDepartureStation().toString() + "\n" +
                     "Route :" + schedule.getRoute(0).showPathToStation(ticket.getArrivalStation().getName(), ticket.getDepartureStation().getName()) + "\n" +
-                    "Train №" + ticket.getTrain().getTrainId()+"\n"+
-                    "Price :" + ticket.getTrain().getWagons().get(0).getPlaces()[0].getPrice();
+                    "Train №" + ticket.getTrainId()+"\n";
+                    //"Price :" + ticket..getWagons().get(0).getPlaces()[0].getPrice();
 
         }else return "No tickets available";
     }
@@ -46,10 +46,10 @@ public class UserInterface {
         Scanner sc = new Scanner(System.in);
         while(true){
             if (sc.nextLine().equals("get ticket")){
-                System.out.println("Pls, enter arrival station: ");
-                String arrivalStation = sc.nextLine();
-                System.out.println("depart station: ");
+                System.out.println("Pls, enter depart station: ");
                 String departStation = sc.nextLine();
+                System.out.println("arrival station: ");
+                String arrivalStation = sc.nextLine();
                 System.out.println("Arrival time, sir: ");
                 String time = sc.nextLine();
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -63,9 +63,17 @@ public class UserInterface {
                 for (Route r : schedule.getRoutes()){
                     r.checkRoute(arrivalStation,departStation,dateArrival);
                     i++;
-                    System.out.println("number " + i + " train: " + r.getTrain().toString());
+                    System.out.println("number " + i + " route: " + r.toString());
                 }
-                //Ticket ticket = new Ticket();
+
+                System.out.println("choose route: ");
+                int chosenRoute = sc.nextInt();
+                Ticket ticket = new Ticket(user.getName(), schedule.getRoute(chosenRoute).getTrain().getTrainId(),
+                        Stations.findStationByName(arrivalStation),
+                        Stations.findStationByName(departStation),
+                        schedule.getRoute(chosenRoute).findDeparturTimeFromStartStation(Stations.findStationByName(departStation)),
+                        schedule.getRoute(chosenRoute).findDeparturTimeFromStartStation(Stations.findStationByName(arrivalStation)));
+                System.out.println("Yor ticket: \n" + ticket.toString());
             }
             if (sc.nextLine().equals("ESC")) break;
         }

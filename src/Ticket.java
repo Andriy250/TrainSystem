@@ -4,11 +4,21 @@ public class Ticket {
 
     private int id;
     private String customerName;
-    private Train train;
+    private int trainid;
     private Station arrivalStation;
     private Station departureStation;
     private Date arrivalDate;
     private Date departureDate;
+
+    public Ticket(String customerName, int trainid, Station arrivalStation, Station departureStation, Date arDate, Date depDate){
+        this.id = hashCode();
+        this.customerName = customerName;
+        this.trainid = trainid;
+        this.arrivalStation = arrivalStation;
+        this.departureStation = departureStation;
+        arrivalDate = arDate;
+        departureDate = depDate;
+    }
 
     public Ticket(int id) {
         this.id = id;
@@ -30,12 +40,8 @@ public class Ticket {
         this.customerName = customerName;
     }
 
-    public Train getTrain() {
-        return train;
-    }
-
-    public void setTrain(Train train) {
-        this.train = train;
+    public int getTrainId() {
+        return trainid;
     }
 
     public Station getArrivalStation() {
@@ -68,5 +74,12 @@ public class Ticket {
 
     public void setDepartureDate(Date departureDate) {
         this.departureDate = departureDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket #" + id + "  Customer: " + customerName + "  train #" + trainid +
+                "  departure station: " + departureStation.toString() + "  arrival station: " +arrivalStation.toString() +
+                " deprture time: " + departureDate.toString() + " arrival date: " + arrivalDate.toString();
     }
 }

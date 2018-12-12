@@ -17,4 +17,19 @@ public class Stations {
     public static ArrayList<Station> getStations() {return stations;}
 
     public static Station getStantion(int index) {return stations.get(index);}
+
+    public static void printStations(){
+        int i = 0;
+        for (Station st : stations) {
+            i++;
+            System.out.println(i + ". " + st.toString());
+        }
+    }
+
+    public static Station findStationByName(String _name){
+        for (Station st : stations) {
+            if (st.getName().equals(_name)) return st;
+        }
+        return  null;
+    }
 }
