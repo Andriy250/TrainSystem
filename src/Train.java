@@ -7,6 +7,9 @@ public class Train {
     public Train(int TRAIN_ID) {
         this.TRAIN_ID = TRAIN_ID;
         //this.wagons = wagons;
+        for (int i = 0 ;i < 3; ++i){
+            wagons.add(new Wagon(TRAIN_ID, WagonType.PLATZKART, i));
+        }
     }
 
 
@@ -14,6 +17,10 @@ public class Train {
     public int getTrainId() {
         return TRAIN_ID;
     }
+
+    public void addWagon(Wagon wagon){ wagons.add(wagon); }
+
+    public void removeWagon(int index){wagons.remove(index);}
 
     public List<Wagon> getWagons() {
         return wagons;

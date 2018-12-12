@@ -5,13 +5,22 @@ public class Wagon {
     private int WAGON_ID;
     private int trainId;
     private WagonType type;
-    private List<Place> places;
+    private Place[] places;
 
-    public Wagon(Train trainId, WagonType type, int WAGON_ID) {
+    public Wagon(int trainId, WagonType type, int WAGON_ID) {
         this.WAGON_ID = WAGON_ID;
-        this.trainId = trainId.getTrainId();
+        this.trainId = trainId;
         this.type = type;
-        this.places = places;
+        places = new Place[20];
+        for (int i = 0; i < 20; ++i){
+            if (this.type == WagonType.PLATZKART) places[i] = new Place(trainId , WAGON_ID,20.0, i);
+            else if (this.type == WagonType.COUPE) places[i] = new Place(trainId , WAGON_ID,100.0, i);
+            else if (this.type == WagonType.SV) places[i] = new Place(trainId , WAGON_ID,200.0, i);
+        }
+    }
+
+    public Place[] getPlaces() {
+        return places;
     }
 
     public WagonType getType() {
@@ -20,14 +29,6 @@ public class Wagon {
 
     public void setType(WagonType type) {
         this.type = type;
-    }
-
-    public List<Place> getPlaces() {
-        return places;
-    }
-
-    public void setPlaces(List<Place> places) {
-        this.places = places;
     }
 
     public int getWagonId() {

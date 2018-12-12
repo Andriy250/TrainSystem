@@ -2,7 +2,7 @@ public class Customer {
 
     private static int customer_ID = 0;
     private String name;
-    private Place place;
+    private Ticket ticket;
 
    public Customer (String name){
        this.customer_ID +=1;
@@ -25,12 +25,12 @@ public class Customer {
         this.customer_ID = customer_ID;
     }
 
-    public Place getPlace() {
-        return place;
+    public Ticket getTicket() {
+        return ticket;
     }
 
-    public void setPlace(Place place) {
-        this.place = place;
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
     }
 
     @Override

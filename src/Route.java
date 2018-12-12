@@ -23,8 +23,8 @@ public class Route {
             isChosen = (trSh.getStation().getName().equals(chosenStation)) ? true : isChosen;
             if (isCur && isChosen) currentArrival = trSh;
         }
-        if ((currentArrival != null) && (arrivalDate.after(currentArrival.getArrivalTime()))
-                && (arrivalDate.before(currentArrival.getDepartureTime()))) {
+        if ((currentArrival != null) && (!currentArrival.getArrivalTime().after(arrivalDate))
+                && (!currentArrival.getDepartureTime().before(arrivalDate))) {
             return true;
         }
         return false;

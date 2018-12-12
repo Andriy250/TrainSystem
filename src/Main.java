@@ -1,42 +1,33 @@
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import sun.plugin.javascript.navig.Array;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 public class Main {
 
-    public static Train intialisationPlace() {
-
+    public static Train initializationPlace() {
 
         Train train = new Train(1);
-        Wagon wagon = new Wagon(train, WagonType.PLATZKART, 1);
-        Place place = new Place(train.getTrainId(), wagon.getWagonId(), 220, 1);
-        List<Place> places = new ArrayList<>();
-        places.add(place);
-        wagon.setPlaces(places);
-        List<Wagon> wagons = new ArrayList<>();
-        wagons.add(wagon);
-        train.setWagons(wagons);
 
         return train;
     }
 
-    public static LinkedList<TrainSchedule> intialisationTrainSchedule() {
+    public static LinkedList<TrainSchedule> initializationTrainSchedule() throws Exception{
         Date time = new Date();
         Station station = new Station("Lviv");
         Station station2 = new Station("Kyiv");
-
-        TrainSchedule trainSchedule = new TrainSchedule(station,new Date(time.getTime()),new Date(time.getTime()));
-        TrainSchedule trainSchedule2 = new TrainSchedule(station2,new Date(time.getTime()),new Date(time.getTime()));
-
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        TrainSchedule trainSchedule = new TrainSchedule(station,
+                    formatter.parse("31/12/2018 14:00:00"),  formatter.parse("31/12/2018 14:15:00"));
+        TrainSchedule trainSchedule2 = new TrainSchedule(station2, new Date(time.getTime()), new Date(time.getTime()));
         LinkedList<TrainSchedule> trainSchedules = new LinkedList<>();
         trainSchedules.add(trainSchedule);
         trainSchedules.add(trainSchedule2);
         return trainSchedules;
     }
 
-    public static List<Customer> intialisationCustomer() {
+    public static List<Customer> initializationCustomer() {
 
         Customer vova = new Customer("Vova");
         List<Customer> customers = new ArrayList<>();
@@ -44,35 +35,39 @@ public class Main {
         return customers;
     }
 
-    public static Route intialisationRoute() {
-        Route route = new Route(intialisationPlace(), intialisationTrainSchedule());
-       return route;
+    public static Route initializationRoute() {
+        try{
+            Route route = new Route(initializationPlace(), initializationTrainSchedule());
+            return route;
+        } catch (Exception ex) {}
+        return null;
     }
 
-    public static Trip intialisationTrip() {
-        Trip trip = new Trip(intialisationRoute().getTrainSchedules().get(0),
-                             intialisationRoute().getTrainSchedules().get(1),
-                             intialisationCustomer(),
-                              intialisationPlace().getWagons().get(0).getPlaces(),
+    public static Trip initializationTrip() {
+        Trip trip = new Trip(initializationRoute().getTrainSchedules().get(0),
+                initializationRoute().getTrainSchedules().get(1),
+                initializationCustomer(),
+                Arrays.asList(initializationPlace().getWagons().get(0).getPlaces()),
                        1);
         return trip;
     }
 
     public static void main(String[] args) {
-	// write your code here
-        intialisationPlace();
-        intialisationTrainSchedule();
-        intialisationCustomer();
-
-        Route route = intialisationRoute();
-        Trip trip = intialisationTrip();
+        initializationPlace();
+        try {
+            initializationTrainSchedule();
+        } catch (Exception ex) {
+            System.out.println("exeption in trainSchedule initialization");
+        }
+        Customer customer = initializationCustomer().get(0);
+        //Schedule schedule = new Schedule();
+        Route route = initializationRoute();
+        Trip trip = initializationTrip();
 
 
        UserInterface userInterface = new UserInterface();
-
-       Ticket ticket = userInterface.createTicket(trip,route);
-
-       System.out.println(userInterface.offer(ticket));
+       userInterface.setSchedule(new Schedule());
+       userInterface.operator(customer);
 
     }
 }
