@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Stations {
-    private static ArrayList<Station> stations;
+    private static ArrayList<Station> stations = new ArrayList<>();
     static {
         stations.add(new Station("Lviv"));
         stations.add(new Station("Gorodok"));
