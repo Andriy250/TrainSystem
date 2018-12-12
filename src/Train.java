@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Train {
@@ -7,6 +8,7 @@ public class Train {
     public Train(int TRAIN_ID) {
         this.TRAIN_ID = TRAIN_ID;
         //this.wagons = wagons;
+        wagons =new ArrayList<>();
         for (int i = 0 ;i < 3; ++i){
             wagons.add(new Wagon(TRAIN_ID, WagonType.PLATZKART, i));
         }

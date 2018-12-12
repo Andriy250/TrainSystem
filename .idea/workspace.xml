@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d8125df-5f42-4c89-9616-0464c95fbd4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainSystem/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainSystem/Route.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainSystem/Schedule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainSystem/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrainSystem/Ticket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainSystem/Train.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrainSystem/Train.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainSystem/UserInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainSystem/Wagon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrainSystem/Wagon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Train.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Train.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,12 +31,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="3379" />
+          <entry key="java" value="3437" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3379" />
+          <entry key="JAVA" value="3437" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -55,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
-              <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+              <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+            <state relative-caret-position="217">
+              <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3034#3035#0" expanded="true" />
@@ -118,9 +124,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Train.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#240#241#0" expanded="true" />
                 <element signature="e#271#272#0" expanded="true" />
               </folding>
@@ -149,11 +156,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="123">
+              <caret line="27" column="58" lean-forward="true" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#231#232#0" expanded="true" />
@@ -215,14 +222,14 @@
         <option value="$PROJECT_DIR$/src/Trip.java" />
         <option value="$PROJECT_DIR$/src/Place.java" />
         <option value="$PROJECT_DIR$/src/Customer.java" />
-        <option value="$PROJECT_DIR$/src/Train.java" />
         <option value="$PROJECT_DIR$/src/Wagon.java" />
-        <option value="$PROJECT_DIR$/src/Schedule.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Stations.java" />
         <option value="$PROJECT_DIR$/src/Route.java" />
         <option value="$PROJECT_DIR$/src/Ticket.java" />
         <option value="$PROJECT_DIR$/src/UserInterface.java" />
+        <option value="$PROJECT_DIR$/src/Train.java" />
+        <option value="$PROJECT_DIR$/src/Schedule.java" />
       </list>
     </option>
   </component>
@@ -261,7 +268,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544610049359" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544610947281" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -495,16 +502,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Trip.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -513,22 +510,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1150#1151#0" expanded="true" />
             <element signature="e#1200#1201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Schedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#369#370#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -547,17 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Train.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="e#240#241#0" expanded="true" />
-            <element signature="e#271#272#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -599,14 +569,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+        <state relative-caret-position="217">
+          <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3034#3035#0" expanded="true" />
             <element signature="e#3057#3058#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Train.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Schedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="27" column="58" lean-forward="true" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
           </folding>
         </state>
       </provider>
