@@ -16,7 +16,7 @@ public class UserInterface {
                 String departStation = sc.nextLine();
                 System.out.println("arrival station: ");
                 String arrivalStation = sc.nextLine();
-                System.out.println("Arrival time, sir: ");
+                System.out.println("Arrival time (dd-MMM-yyyy HH:mm:ss), sir: ");
                 String time = sc.nextLine();
                 SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
                 Date dateArrival = null;
