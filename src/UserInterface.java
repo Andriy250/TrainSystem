@@ -38,6 +38,10 @@ public class UserInterface {
                 }
                 System.out.println("choose route: ");
                 int chosenRoute = sc.nextInt() - 1;
+                if (chosenRoute + 1 > i){
+                    System.out.println("No train with number " + (chosenRoute + 1));
+                    continue;
+                }
                 System.out.println("\nchoose wagon: ");
                 for (Wagon w : schedule.getRoute(chosenRoute).getTrain().getWagons()) System.out.println(w);
                 int chosenWagon = sc.nextInt();
@@ -59,6 +63,30 @@ public class UserInterface {
                 System.out.println("Yor ticket: \n" + ticket.toString());
             }
             if (command.equals("schedule")) schedule.printSchedule();
+            if (command.equals("show route bt")){
+                System.out.println("Pls, enter depart station: ");
+                String departStation = sc.nextLine();
+                System.out.println("arrival station: ");
+                String arrivalStation = sc.nextLine();
+                int i = 0;
+                for (Route r : schedule.getRoutes()){
+                        i++;
+                        System.out.println("number " + i + " route: " + r.toString());
+                }
+                if (i == 0) {
+                    System.out.println("No routes");
+                    continue;
+                }
+                System.out.println("choose route: ");
+                int chosenRoute = sc.nextInt() - 1;
+                if (chosenRoute + 1 > i){
+                    System.out.println("No train with number " + (chosenRoute + 1));
+                    continue;
+                }
+                System.out.println(chosenRoute);
+                System.out.println(schedule.getRoute(chosenRoute).
+                        showPathToStation(arrivalStation, departStation));
+            }
             if (command.equals("ESC")) break;
         }
     }

@@ -37,15 +37,14 @@ public class Route {
         StringBuilder stations = new StringBuilder();
         boolean pathStart = false;
         while((iterator.hasNext())){
-            if((((TrainSchedule)iterator.next()).getStation().getName().equals(currentStation))){
+            TrainSchedule trainSchedule =(TrainSchedule)iterator.next();
+            if((trainSchedule.getStation().getName().equals(currentStation))){
                 stations.append(currentStation + ((!pathStart)?"-":""));
                 pathStart = !pathStart;
-            } else if ((((TrainSchedule)iterator.next()).getStation().getName().equals(chosenStation))) {
+            } else if ((trainSchedule.getStation().getName().equals(chosenStation))) {
                 stations.append(chosenStation + ((!pathStart)?"-":""));
                 pathStart = !pathStart;
-            }
-            if (pathStart) stations.append(((TrainSchedule) iterator.next()).getStation().getName() + "-");
-            else break;
+            } else if (pathStart) stations.append(trainSchedule.getStation().getName() + "-");
         }
         return stations.toString();
     }
