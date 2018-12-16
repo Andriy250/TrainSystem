@@ -49,7 +49,6 @@ public class Wagon {
                 "wagonId=" + WAGON_ID +
                 ", trainId=" + trainId +
                 ", type=" + type +
-                ", places=" + places +
                 '}';
     }
 }

@@ -17,7 +17,8 @@ public class Place {
 
     public void placeIsTaken() {isFree = false;}
 
-    public boolean checkPlase(){return isFree;}
+
+    public boolean checkPlace(){return isFree;}
 
     public void setPrice(double price){
         this.price = price;
@@ -25,6 +26,10 @@ public class Place {
 
     public double getPrice() {
         return price;
+    }
+
+    public void printFreePlace(){
+        if (isFree) System.out.println(number + " is free, price " + price);
     }
 
     @Override

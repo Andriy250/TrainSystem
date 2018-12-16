@@ -1,7 +1,4 @@
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class Route {
 
@@ -11,17 +8,22 @@ public class Route {
     public Route(Train train, LinkedList<TrainSchedule> trainSchedules){
         this.train = train;
         this.trainSchedules = trainSchedules;
+        Collections.sort(trainSchedules, new TrainScheduleComparator());
     }
 
 
     public boolean checkRoute(String currentStation, String chosenStation, Date arrivalDate){
         boolean isCur=false,isChosen = false;
-        TrainSchedule currentArrival = null; //trainSchedules.get(0);
+        TrainSchedule currentArrival = null;
         for (TrainSchedule trSh : trainSchedules){
             isCur = (trSh.getStation().getName().equals(currentStation)) ? true : isCur;
             isChosen = (trSh.getStation().getName().equals(chosenStation)) ? true : isChosen;
-            if (isCur && isChosen) currentArrival = trSh;
+            if (isCur && (currentArrival == null && !isChosen)) {
+                currentArrival = trSh;
+            }
         }
+        currentArrival = (isChosen) ? currentArrival : null;
+
         if ((currentArrival != null) && (!currentArrival.getArrivalTime().after(arrivalDate))
                 && (!currentArrival.getDepartureTime().before(arrivalDate))) {
             return true;
@@ -84,9 +86,9 @@ public class Route {
     @Override
     public String toString() {
         StringBuilder info = new StringBuilder();
-       // info.append(train.toString() + " ");
+        info.append("|Train " + train.getTrainId() + " ");
         for(TrainSchedule t : trainSchedules) {
-            info.append(t.toString() + " ");
+            info.append("| " + t.toString() + "| ");
         }
         return info.toString();
     }

@@ -24,7 +24,6 @@ public class Schedule {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss");
 
         LinkedList<TrainSchedule> trainSchedules = new LinkedList<>();
-        System.out.println(formatter.parse("31-Dec-2018 15:00:00").toString());// + "  " + formatter.parse("31/12/2018 15:15:00"));
         trainSchedules.add(new TrainSchedule(Stations.getStantion(0), formatter.parse("31-Dec-2018 14:00:00"),
                 formatter.parse("31-Dec-2018 14:15:00")));
         trainSchedules.add(new TrainSchedule(Stations.getStantion(1), formatter.parse("31-Dec-2018 15:00:00"),
@@ -72,4 +71,7 @@ public class Schedule {
         return routes;
     }
 
+    public void printSchedule(){
+        for (Route route: routes) System.out.println(route + "\n");
+    }
 }
