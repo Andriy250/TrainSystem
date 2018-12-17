@@ -37,4 +37,18 @@ public class RouteTest {
         assertEquals(expected,actual);
 
     }
+    @org.junit.Test
+    public void showPathToStation(){
+
+
+        Schedule s = new Schedule();
+        Route route =   s.getRoute(0);
+
+        String actual = route.showPathToStation("Lviv","Sambir");
+        String expected = "Lviv-Gorodok-Sambir";
+
+        assertEquals(actual,expected);
+
+    }
+
 }
